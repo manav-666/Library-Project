@@ -1,0 +1,641 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Library Management System</title>
+
+    <!-- Google Font -->
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Remix Icons -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/sidebar.css" />
+    <link rel="stylesheet" href="css/navbar.css" />
+    <link rel="stylesheet" href="css/dashboard.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+  </head>
+  <body>
+    <div class="container">
+      <!-- ================= Sidebar ================= -->
+
+      <aside class="sidebar">
+        <div class="logo">
+          <i class="ri-book-open-fill"></i>
+
+          <div>
+            <h2>Library</h2>
+            <span>Management</span>
+          </div>
+        </div>
+
+        <ul class="menu">
+          <li class="active">
+            <a href="#">
+              <i class="ri-dashboard-fill"></i>
+              Dashboard
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-book-2-fill"></i>
+              Books
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-group-fill"></i>
+              Members
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-arrow-left-right-fill"></i>
+              Issue Books
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-book-read-fill"></i>
+              Return Books
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-bookmark-fill"></i>
+              Reservations
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-file-chart-fill"></i>
+              Reports
+            </a>
+          </li>
+
+          <li>
+            <a href="#">
+              <i class="ri-settings-3-fill"></i>
+              Settings
+            </a>
+          </li>
+        </ul>
+
+        <div class="logout">
+          <button id="logoutBtn">
+            <i class="ri-logout-box-r-line"></i>
+
+            Logout
+          </button>
+        </div>
+      </aside>
+
+      <!-- ================= Main Content ================= -->
+
+      <main class="main-content">
+        <!-- ================= Navbar ================= -->
+
+        <header class="topbar">
+          <div class="left">
+            <button id="menuBtn">
+              <i class="ri-menu-line"></i>
+            </button>
+
+            <div class="search-box">
+              <i class="ri-search-line"></i>
+
+              <input type="text" placeholder="Search books, members..." />
+            </div>
+          </div>
+
+          <div class="right">
+            <button class="icon-btn">
+              <i class="ri-notification-3-fill"></i>
+
+              <span class="badge">5</span>
+            </button>
+
+            <button class="icon-btn">
+              <i class="ri-moon-clear-fill"></i>
+            </button>
+
+            <div class="profile">
+              <img src="https://i.pravatar.cc/100" alt="profile" />
+
+              <div>
+                <h4>Admin</h4>
+
+                <span>Librarian</span>
+              </div>
+            </div>
+          </div>
+        </header>
+
+        <!-- ================= Welcome ================= -->
+
+        <section class="welcome">
+          <div>
+            <h1>Welcome Back 👋</h1>
+
+            <p>
+              Manage books, members, transactions and reports from one place.
+            </p>
+          </div>
+        </section>
+
+        <!-- ================= Dashboard Cards ================= -->
+
+        <section class="cards">
+          <div class="dashboard-card">
+            <div class="card-icon blue">
+              <i class="ri-book-fill"></i>
+            </div>
+
+            <div>
+              <h2 id="totalBooks">1248</h2>
+
+              <span>Total Books</span>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-icon green">
+              <i class="ri-book-open-fill"></i>
+            </div>
+
+            <div>
+              <h2 id="availableBooks">1089</h2>
+
+              <span>Available</span>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-icon orange">
+              <i class="ri-bookmark-fill"></i>
+            </div>
+
+            <div>
+              <h2 id="issuedBooks">159</h2>
+
+              <span>Issued</span>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-icon red">
+              <i class="ri-alarm-warning-fill"></i>
+            </div>
+
+            <div>
+              <h2 id="overdueBooks">18</h2>
+
+              <span>Overdue</span>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-icon purple">
+              <i class="ri-group-fill"></i>
+            </div>
+
+            <div>
+              <h2 id="members">562</h2>
+
+              <span>Members</span>
+            </div>
+          </div>
+
+          <div class="dashboard-card">
+            <div class="card-icon cyan">
+              <i class="ri-money-dollar-circle-fill"></i>
+            </div>
+
+            <div>
+              <h2 id="fineCollection">$2,350</h2>
+
+              <span>Fine Collection</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ================= Quick Actions ================= -->
+
+        <section class="quick-actions">
+          <button id="addBook">
+            <i class="ri-add-circle-fill"></i>
+
+            Add Book
+          </button>
+
+          <button id="addMember">
+            <i class="ri-user-add-fill"></i>
+
+            Add Member
+          </button>
+
+          <button id="issueBook">
+            <i class="ri-bookmark-fill"></i>
+
+            Issue Book
+          </button>
+
+          <button id="returnBook">
+            <i class="ri-book-read-fill"></i>
+
+            Return Book
+          </button>
+        </section>
+      </main>
+    </div>
+            <!-- ================= Analytics ================= -->
+
+        <section class="analytics-grid">
+
+            <!-- Chart -->
+
+            <div class="panel chart-panel">
+
+                <div class="panel-header">
+
+                    <h2>Monthly Book Issues</h2>
+
+                    <select id="chartFilter">
+
+                        <option>This Year</option>
+                        <option>Last Year</option>
+
+                    </select>
+
+                </div>
+
+                <div class="chart-placeholder">
+
+                    <i class="ri-bar-chart-box-fill"></i>
+
+                    <h3>Chart.js Graph</h3>
+
+                    <p>
+                        Monthly issue statistics will appear here.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- Category -->
+
+            <div class="panel category-panel">
+
+                <div class="panel-header">
+
+                    <h2>Books by Category</h2>
+
+                </div>
+
+                <div class="category-list">
+
+                    <div class="category-item">
+
+                        <span>Programming</span>
+
+                        <div class="progress">
+
+                            <div class="fill blue" style="width:90%"></div>
+
+                        </div>
+
+                        <strong>420</strong>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <span>Science</span>
+
+                        <div class="progress">
+
+                            <div class="fill green" style="width:70%"></div>
+
+                        </div>
+
+                        <strong>310</strong>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <span>History</span>
+
+                        <div class="progress">
+
+                            <div class="fill orange" style="width:45%"></div>
+
+                        </div>
+
+                        <strong>185</strong>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <span>Novels</span>
+
+                        <div class="progress">
+
+                            <div class="fill red" style="width:80%"></div>
+
+                        </div>
+
+                        <strong>360</strong>
+
+                    </div>
+
+                    <div class="category-item">
+
+                        <span>Biography</span>
+
+                        <div class="progress">
+
+                            <div class="fill purple" style="width:25%"></div>
+
+                        </div>
+
+                        <strong>98</strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+        <!-- ================= Recent Activity ================= -->
+
+        <section class="recent-activity">
+
+            <div class="panel">
+
+                <div class="panel-header">
+
+                    <h2>Recent Activities</h2>
+
+                    <button>View All</button>
+
+                </div>
+
+                <ul class="activity-list">
+
+                    <li>
+
+                        <div class="activity-icon success">
+
+                            <i class="ri-book-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>JavaScript Guide Issued</h4>
+
+                            <span>Issued to Rahul Sharma</span>
+
+                        </div>
+
+                        <small>2 min ago</small>
+
+                    </li>
+
+                    <li>
+
+                        <div class="activity-icon warning">
+
+                            <i class="ri-user-add-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>New Member Registered</h4>
+
+                            <span>Anjali Verma joined</span>
+
+                        </div>
+
+                        <small>15 min ago</small>
+
+                    </li>
+
+                    <li>
+
+                        <div class="activity-icon blue">
+
+                            <i class="ri-bookmark-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>Book Reserved</h4>
+
+                            <span>Clean Code</span>
+
+                        </div>
+
+                        <small>1 hour ago</small>
+
+                    </li>
+
+                    <li>
+
+                        <div class="activity-icon danger">
+
+                            <i class="ri-error-warning-fill"></i>
+
+                        </div>
+
+                        <div>
+
+                            <h4>Fine Collected</h4>
+
+                            <span>$25 Received</span>
+
+                        </div>
+
+                        <small>Today</small>
+
+                    </li>
+
+                </ul>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- ================= Latest Transactions ================= -->
+
+        <section class="panel">
+
+            <div class="panel-header">
+
+                <h2>Latest Transactions</h2>
+
+                <button id="viewTransactions">
+
+                    View All
+
+                </button>
+
+            </div>
+
+            <div class="table-wrapper">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Transaction ID</th>
+                            <th>Book</th>
+                            <th>Member</th>
+                            <th>Issue Date</th>
+                            <th>Return Date</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+                    <tbody id="transactionTable">
+
+                        <tr>
+
+                            <td>#TX1021</td>
+
+                            <td>Clean Code</td>
+
+                            <td>Rahul Sharma</td>
+
+                            <td>22 Jul 2026</td>
+
+                            <td>30 Jul 2026</td>
+
+                            <td>
+
+                                <span class="status issued">
+
+                                    Issued
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>#TX1022</td>
+
+                            <td>Atomic Habits</td>
+
+                            <td>Priya Singh</td>
+
+                            <td>20 Jul 2026</td>
+
+                            <td>28 Jul 2026</td>
+
+                            <td>
+
+                                <span class="status returned">
+
+                                    Returned
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                        <tr>
+
+                            <td>#TX1023</td>
+
+                            <td>Python Crash Course</td>
+
+                            <td>Mohit Patel</td>
+
+                            <td>19 Jul 2026</td>
+
+                            <td>26 Jul 2026</td>
+
+                            <td>
+
+                                <span class="status overdue">
+
+                                    Overdue
+
+                                </span>
+
+                            </td>
+
+                        </tr>
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+
+
+        <!-- ================= Footer ================= -->
+
+        <footer>
+
+            <p>
+
+                © 2026 Library Management System
+
+            </p>
+
+            <span>
+
+                Version 1.0.0
+
+            </span>
+
+        </footer>
+
+    </main>
+
+</div>
+
+<script src="js/app.js"></script>
+  </body>
+</html>
