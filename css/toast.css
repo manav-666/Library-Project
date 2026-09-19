@@ -1,0 +1,234 @@
+/* ==========================================
+   TOAST CONTAINER
+========================================== */
+
+.toast{
+
+    position: fixed;
+
+    top:30px;
+
+    right: 30px;
+
+    width:360px;
+
+    background:var(--surface);
+
+    border-radius:18px;
+
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+
+    display:flex;
+
+    align-items:center;
+
+    gap:18px;
+
+    padding:18px 22px;
+
+    z-index:3000;
+
+    transform:translateX(450px);
+
+    transition:.4s ease;
+
+    overflow:hidden;
+
+}
+
+/* ==========================================
+   SHOW
+========================================== */
+
+.toast.show{
+    transform:translateX(0);
+}
+
+/* ==========================================
+   ICON
+========================================== */
+
+#toastIcon{
+
+    font-size:32px;
+
+    flex-shrink:0;
+
+}
+
+/* ==========================================
+   CONTENT
+========================================== */
+
+.toast-content{
+
+    flex:1;
+
+}
+
+.toast-content h4{
+
+    font-size:17px;
+
+    margin-bottom:4px;
+
+}
+
+.toast-content p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+}
+
+/* ==========================================
+   SUCCESS
+========================================== */
+
+.toast.success{
+
+    border-left:6px solid var(--success);
+
+}
+
+.toast.success #toastIcon{
+
+    color:var(--success);
+
+}
+
+/* ==========================================
+   ERROR
+========================================== */
+
+.toast.error{
+
+    border-left:6px solid var(--danger);
+
+}
+
+.toast.error #toastIcon{
+
+    color:var(--danger);
+
+}
+
+/* ==========================================
+   WARNING
+========================================== */
+
+.toast.warning{
+
+    border-left:6px solid var(--warning);
+
+}
+
+.toast.warning #toastIcon{
+
+    color:var(--warning);
+
+}
+
+/* ==========================================
+   INFO
+========================================== */
+
+.toast.info{
+
+    border-left:6px solid var(--secondary);
+
+}
+
+.toast.info #toastIcon{
+
+    color:var(--secondary);
+
+}
+
+/* ==========================================
+   PROGRESS BAR
+========================================== */
+
+.toast::after{
+
+    content:"";
+
+    position:absolute;
+
+    bottom:0;
+
+    left:0;
+
+    height:4px;
+
+    width:100%;
+
+    background:var(--primary);
+
+    animation:toastTimer 2s linear forwards;
+
+}
+
+@keyframes toastTimer{
+
+    from{
+
+        width:100%;
+
+    }
+
+    to{
+
+        width:0;
+
+    }
+
+}
+
+/* ==========================================
+   HOVER PAUSE
+========================================== */
+
+.toast:hover::after{
+
+    animation-play-state:paused;
+
+}
+
+.toast:hover{
+
+    transform:translateX(-8px);
+
+}
+
+.toast{
+
+    animation:toastFade .35s ease;
+
+}
+
+@keyframes toastFade{
+
+    from{
+
+        opacity:0;
+
+        transform:translateX(100px);
+
+    }
+
+    to{
+
+        opacity:1;
+
+        transform:translateX(0);
+
+    }
+
+}
+@media (max-width: 768px){
+    #toast{
+        overflow: hidden;
+    }
+}

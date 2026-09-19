@@ -1,193 +1,213 @@
-/* ==========================================================
-   TOP NAVBAR
-========================================================== */
+/* ==========================================
+   TOPBAR
+========================================== */
 
 .topbar{
 
-    position:sticky;
-    top:0;
-    z-index:999;
-
-    display:flex;
-    align-items:center;
-    justify-content:space-between;
-
-    gap:25px;
-
-    padding:18px 28px;
-
-    background:rgba(15,23,42,.75);
-
-    backdrop-filter:blur(18px);
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-/* ==========================================================
-   LEFT SECTION
-========================================================== */
-
-.topbar .left{
-
-    display:flex;
-    align-items:center;
-    gap:18px;
-
-    flex:1;
-
-}
-
-/* ==========================================================
-   MENU BUTTON
-========================================================== */
-
-#menuBtn{
-
-    width:48px;
-    height:48px;
-
-    border:none;
-
-    border-radius:14px;
-
-    display:flex;
-    align-items:center;
-    justify-content:center;
-
     background:var(--surface);
 
-    color:var(--white);
+    display:flex;
+
+    justify-content:space-between;
+
+    align-items:center;
+
+    padding:20px 30px;
+
+    border-bottom:1px solid var(--border);
+
+    position:sticky;
+
+    top:0;
+
+    z-index:100;
+
+}
+
+/* ==========================================
+   LEFT
+========================================== */
+
+.topbar-left{
+
+    display:flex;
+
+    align-items:center;
+
+    gap:20px;
+
+}
+
+#menuToggle{
+
+    width:45px;
+
+    height:45px;
+
+    border-radius:12px;
+
+    background:#F3F4F6;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
 
     font-size:22px;
 
-    transition:var(--transition);
+    transition:.3s;
 
 }
 
-#menuBtn:hover{
+#menuToggle:hover{
 
     background:var(--primary);
 
-    transform:rotate(90deg);
+    color:white;
 
 }
 
-/* ==========================================================
-   SEARCH BOX
-========================================================== */
+.page-title h2{
 
-.search-box{
+    font-size:26px;
+
+    font-weight:700;
+
+}
+
+.page-title p{
+
+    color:var(--text-light);
+
+    font-size:14px;
+
+    margin-top:4px;
+
+}
+body.dark-mode #menuToggle i{
+    color: black;
+}
+
+body.dark-mode #menuToggle{
+    background-color: #1e293b;
+}
+
+body.dark-mode #menuToggle:hover{
+    background: var(--primary);
+}
+
+#menuToggle:hover i{
+    color: white;
+}
+
+body.dark-mode #menuToggle:hover i{
+    color: white;
+}
+
+/* ==========================================
+   CENTER SEARCH
+========================================== */
+
+.topbar-center{
 
     flex:1;
 
-    max-width:650px;
-
     display:flex;
-    align-items:center;
 
-    gap:12px;
+    justify-content:center;
 
-    padding:0 18px;
-
-    height:50px;
-
-    border-radius:14px;
-
-    background:var(--surface);
-
-    border:1px solid transparent;
-
-    transition:var(--transition);
+    padding:0 40px;
 
 }
 
-.search-box:hover{
+.global-search{
 
-    border-color:rgba(59,130,246,.35);
+    width:100%;
+
+    max-width:500px;
+
+    position:relative;
 
 }
 
-.search-box:focus-within{
+.global-search i{
+
+    position:absolute;
+
+    left:15px;
+
+    top:50%;
+
+    transform:translateY(-50%);
+
+    color:#9CA3AF;
+
+}
+
+.global-search input{
+
+    width:100%;
+
+    padding:13px 18px 13px 45px;
+
+    border:1px solid var(--border);
+
+    border-radius:12px;
+
+    background:#fff;
+
+    transition:.3s;
+
+}
+
+.global-search input:focus{
 
     border-color:var(--primary);
 
-    box-shadow:0 0 0 4px rgba(59,130,246,.15);
+    box-shadow:0 0 0 4px rgba(79,70,229,.15);
 
 }
 
-.search-box i{
+/* ==========================================
+   RIGHT
+========================================== */
 
-    font-size:20px;
-
-    color:var(--muted);
-
-}
-
-.search-box input{
-
-    flex:1;
-
-    border:none;
-
-    background:transparent;
-
-    padding:0;
-
-    color:var(--white);
-
-    font-size:15px;
-
-}
-
-.search-box input::placeholder{
-
-    color:var(--muted);
-
-}
-
-.search-box input:focus{
-
-    outline:none;
-
-}
-
-/* ==========================================================
-   RIGHT SECTION
-========================================================== */
-
-.topbar .right{
+.topbar-right{
 
     display:flex;
+
     align-items:center;
-    gap:16px;
+
+    gap:18px;
 
 }
 
-/* ==========================================================
-   ICON BUTTON
-========================================================== */
+/* ==========================================
+   ICON BUTTONS
+========================================== */
 
 .icon-btn{
 
-    width:48px;
-    height:48px;
+    width:45px;
 
-    border-radius:14px;
+    height:45px;
 
-    background:var(--surface);
+    border-radius:12px;
 
-    color:var(--white);
+    background:#F3F4F6;
 
     display:flex;
-    align-items:center;
+
     justify-content:center;
+
+    align-items:center;
 
     position:relative;
 
     font-size:20px;
 
-    transition:var(--transition);
+    transition:.3s;
 
 }
 
@@ -195,23 +215,25 @@
 
     background:var(--primary);
 
-    transform:translateY(-3px);
+    color:white;
 
 }
 
-/* ==========================================================
-   BADGE
-========================================================== */
+/* ==========================================
+   NOTIFICATION BADGE
+========================================== */
 
-.badge{
+.notification-badge{
 
     position:absolute;
 
-    top:6px;
-    right:6px;
+    top:-4px;
 
-    width:18px;
-    height:18px;
+    right:-4px;
+
+    width:20px;
+
+    height:20px;
 
     border-radius:50%;
 
@@ -219,308 +241,138 @@
 
     color:white;
 
+    font-size:11px;
+
     display:flex;
-    align-items:center;
+
     justify-content:center;
 
-    font-size:10px;
-    font-weight:600;
-
-    border:2px solid var(--surface);
-
-}
-
-/* ==========================================================
-   PROFILE
-========================================================== */
-
-.profile{
-
-    display:flex;
     align-items:center;
 
-    gap:12px;
-
-    padding:6px 12px;
-
-    border-radius:16px;
-
-    cursor:pointer;
-
-    transition:var(--transition);
-
 }
 
-.profile:hover{
+/* ==========================================
+   DATE
+========================================== */
 
-    background:rgba(255,255,255,.05);
-
-}
-
-.profile img{
-
-    width:48px;
-    height:48px;
-
-    object-fit:cover;
-
-    border-radius:50%;
-
-    border:2px solid var(--primary);
-
-}
-
-.profile h4{
-
-    color:white;
-
-    font-size:15px;
-
-    font-weight:600;
-
-}
-
-.profile span{
-
-    color:var(--muted);
-
-    font-size:13px;
-
-}
-
-/* ==========================================================
-   PROFILE DROPDOWN
-========================================================== */
-
-.profile{
-
-    position:relative;
-
-}
-
-.profile-menu{
-
-    position:absolute;
-
-    top:70px;
-    right:0;
-
-    width:240px;
-
-    background:var(--surface);
-
-    border:1px solid rgba(255,255,255,.08);
-
-    border-radius:18px;
-
-    box-shadow:var(--shadow-lg);
-
-    overflow:hidden;
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(12px);
-
-    transition:var(--transition);
-
-}
-
-.profile.active .profile-menu{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
-}
-
-.profile-menu a{
+.current-date{
 
     display:flex;
 
     align-items:center;
 
-    gap:14px;
+    gap:8px;
 
-    padding:16px 20px;
-
-    color:var(--muted);
-
-    transition:var(--transition);
-
-}
-
-.profile-menu a:hover{
-
-    background:rgba(59,130,246,.12);
-
-    color:white;
-
-}
-
-.profile-menu i{
-
-    font-size:18px;
-
-}
-
-/* ==========================================================
-   BREADCRUMB
-========================================================== */
-
-.breadcrumb{
-
-    display:flex;
-
-    align-items:center;
-
-    gap:10px;
-
-    margin-top:20px;
-
-    color:var(--muted);
+    color:var(--text-light);
 
     font-size:14px;
 
 }
 
-.breadcrumb a{
+/* ==========================================
+   PROFILE
+========================================== */
 
-    color:var(--muted);
-
-}
-
-.breadcrumb a:hover{
-
-    color:var(--primary);
-
-}
-
-/* ==========================================================
-   NOTIFICATION PANEL
-========================================================== */
-
-.notification-panel{
-
-    position:absolute;
-
-    top:72px;
-
-    right:140px;
-
-    width:340px;
-
-    background:var(--surface);
-
-    border-radius:18px;
-
-    border:1px solid rgba(255,255,255,.08);
-
-    box-shadow:var(--shadow-lg);
-
-    opacity:0;
-
-    visibility:hidden;
-
-    transform:translateY(12px);
-
-    transition:var(--transition);
-
-    overflow:hidden;
-
-}
-
-.notification-panel.active{
-
-    opacity:1;
-
-    visibility:visible;
-
-    transform:translateY(0);
-
-}
-
-.notification-header{
-
-    padding:18px;
-
-    border-bottom:1px solid rgba(255,255,255,.08);
-
-}
-
-.notification-item{
+.profile-menu{
 
     display:flex;
 
-    gap:14px;
+    align-items:center;
 
-    padding:16px 18px;
+    gap:12px;
 
     cursor:pointer;
 
-    transition:var(--transition);
+    padding:8px 12px;
+
+    border-radius:12px;
+
+    transition:.3s;
 
 }
 
-.notification-item:hover{
+.profile-menu:hover{
 
-    background:rgba(255,255,255,.04);
-
-}
-
-.notification-item i{
-
-    color:var(--primary);
-
-    font-size:20px;
+    background:#F3F4F6;
 
 }
 
-.notification-item h5{
+.profile-menu img{
 
-    color:white;
+    width:48px;
 
-    margin-bottom:4px;
+    height:48px;
 
-}
+    border-radius:50%;
 
-.notification-item p{
-
-    font-size:13px;
-
-    color:var(--muted);
+    object-fit:cover;
 
 }
 
-/* ==========================================================
-   NAVBAR ANIMATION
-========================================================== */
+.profile-menu h4{
 
-.topbar{
-
-    animation:slideDown .45s ease;
+    font-size:15px;
 
 }
 
-@keyframes slideDown{
+.profile-menu small{
 
-    from{
+    color:var(--text-light);
 
-        opacity:0;
+}
 
-        transform:translateY(-25px);
+/* ==========================================
+   RESPONSIVE HELPERS
+========================================== */
+
+@media(max-width:1200px){
+
+    .topbar-center{
+
+        display:none;
 
     }
 
-    to{
+}
 
-        opacity:1;
+@media(max-width:768px){
 
-        transform:translateY(0);
+    .current-date{
+
+        display:none;
 
     }
+
+    .page-title p{
+
+        display:none;
+
+    }
+
+}
+
+.global-search input::placeholder{
+
+    color:#9CA3AF;
+
+    transition:.3s;
+
+}
+
+.global-search input:focus::placeholder{
+
+    opacity:.5;
+
+}
+
+.profile-menu img{
+
+    transition:.3s;
+
+}
+
+.profile-menu:hover img{
+
+    transform:scale(1.08);
 
 }

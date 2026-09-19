@@ -1,641 +1,1787 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <title>Library Management System</title>
 
-    <!-- Google Font -->
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
-      rel="stylesheet"
-    />
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
 
     <!-- Remix Icons -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css"
-      rel="stylesheet"
-    />
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@4.3.0/fonts/remixicon.css" rel="stylesheet">
 
-    <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/sidebar.css" />
-    <link rel="stylesheet" href="css/navbar.css" />
-    <link rel="stylesheet" href="css/dashboard.css" />
-    <link rel="stylesheet" href="css/responsive.css" />
-  </head>
-  <body>
+    <!-- CSS -->
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/sidebar.css">
+    <link rel="stylesheet" href="css/navbar.css">
+    <link rel="stylesheet" href="css/dashboard.css">
+    <link rel="stylesheet" href="css/books.css">
+    <link rel="stylesheet" href="css/members.css">
+    <link rel="stylesheet" href="css/issue.css">
+    <link rel="stylesheet" href="css/reports.css">
+    <link rel="stylesheet" href="css/modal.css">
+    <link rel="stylesheet" href="css/toast.css">
+    <link rel="stylesheet" href="css/responsive.css">
+
+</head>
+
+<body>
+
     <div class="container">
-      <!-- ================= Sidebar ================= -->
 
-      <aside class="sidebar">
-        <div class="logo">
-          <i class="ri-book-open-fill"></i>
+        <!-- ================= SIDEBAR START ================= -->
 
-          <div>
-            <h2>Library</h2>
-            <span>Management</span>
-          </div>
-        </div>
+        <aside class="sidebar">
 
-        <ul class="menu">
-          <li class="active">
-            <a href="#">
-              <i class="ri-dashboard-fill"></i>
-              Dashboard
-            </a>
-          </li>
+            <!-- Logo -->
 
-          <li>
-            <a href="#">
-              <i class="ri-book-2-fill"></i>
-              Books
-            </a>
-          </li>
+            <div class="logo">
 
-          <li>
-            <a href="#">
-              <i class="ri-group-fill"></i>
-              Members
-            </a>
-          </li>
+                <i class="ri-book-open-fill"></i>
 
-          <li>
-            <a href="#">
-              <i class="ri-arrow-left-right-fill"></i>
-              Issue Books
-            </a>
-          </li>
+                <div>
 
-          <li>
-            <a href="#">
-              <i class="ri-book-read-fill"></i>
-              Return Books
-            </a>
-          </li>
+                    <h2>LibMaster</h2>
 
-          <li>
-            <a href="#">
-              <i class="ri-bookmark-fill"></i>
-              Reservations
-            </a>
-          </li>
+                    <small>Management System</small>
 
-          <li>
-            <a href="#">
-              <i class="ri-file-chart-fill"></i>
-              Reports
-            </a>
-          </li>
+                </div>
 
-          <li>
-            <a href="#">
-              <i class="ri-settings-3-fill"></i>
-              Settings
-            </a>
-          </li>
-        </ul>
-
-        <div class="logout">
-          <button id="logoutBtn">
-            <i class="ri-logout-box-r-line"></i>
-
-            Logout
-          </button>
-        </div>
-      </aside>
-
-      <!-- ================= Main Content ================= -->
-
-      <main class="main-content">
-        <!-- ================= Navbar ================= -->
-
-        <header class="topbar">
-          <div class="left">
-            <button id="menuBtn">
-              <i class="ri-menu-line"></i>
-            </button>
-
-            <div class="search-box">
-              <i class="ri-search-line"></i>
-
-              <input type="text" placeholder="Search books, members..." />
-            </div>
-          </div>
-
-          <div class="right">
-            <button class="icon-btn">
-              <i class="ri-notification-3-fill"></i>
-
-              <span class="badge">5</span>
-            </button>
-
-            <button class="icon-btn">
-              <i class="ri-moon-clear-fill"></i>
-            </button>
-
-            <div class="profile">
-              <img src="https://i.pravatar.cc/100" alt="profile" />
-
-              <div>
-                <h4>Admin</h4>
-
-                <span>Librarian</span>
-              </div>
-            </div>
-          </div>
-        </header>
-
-        <!-- ================= Welcome ================= -->
-
-        <section class="welcome">
-          <div>
-            <h1>Welcome Back 👋</h1>
-
-            <p>
-              Manage books, members, transactions and reports from one place.
-            </p>
-          </div>
-        </section>
-
-        <!-- ================= Dashboard Cards ================= -->
-
-        <section class="cards">
-          <div class="dashboard-card">
-            <div class="card-icon blue">
-              <i class="ri-book-fill"></i>
             </div>
 
-            <div>
-              <h2 id="totalBooks">1248</h2>
+            <!-- Search -->
 
-              <span>Total Books</span>
-            </div>
-          </div>
+            <div class="sidebar-search">
 
-          <div class="dashboard-card">
-            <div class="card-icon green">
-              <i class="ri-book-open-fill"></i>
+                <i class="ri-search-line"></i>
+
+                <input type="text" placeholder="Search Menu">
+
             </div>
 
-            <div>
-              <h2 id="availableBooks">1089</h2>
+            <!-- Navigation -->
 
-              <span>Available</span>
+            <nav>
+
+                <ul>
+
+                    <li class="active">
+
+                        <a href="#dashboard" id="dashboardBtn">
+
+                            <i class="ri-dashboard-3-line"></i>
+
+                            <span>Dashboard</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#books" id="booksBtn">
+
+                            <i class="ri-book-2-line"></i>
+
+                            <span>Books</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#members" id="membersBtn">
+
+                            <i class="ri-team-line"></i>
+
+                            <span>Members</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#issue" id="issueBtn">
+
+                            <i class="ri-bookmark-line"></i>
+
+                            <span>Issue Books</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#return" id="returnBtn">
+
+                            <i class="ri-arrow-go-back-line"></i>
+
+                            <span>Return Books</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#reservation" id="reservationBtn">
+
+                            <i class="ri-calendar-check-line"></i>
+
+                            <span>Reservations</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#reports" id="reportsBtn">
+
+                            <i class="ri-bar-chart-box-line"></i>
+
+                            <span>Reports</span>
+
+                        </a>
+
+                    </li>
+
+                    <li>
+
+                        <a href="#settings" id="settingsBtn">
+
+                            <i class="ri-settings-3-line"></i>
+
+                            <span>Settings</span>
+
+                        </a>
+
+                    </li>
+
+                </ul>
+
+            </nav>
+
+            <!-- Sidebar Footer -->
+
+            <div class="sidebar-footer">
+
+                <div class="admin">
+
+                    <img src="https://i.pravatar.cc/80" alt="Admin">
+
+                    <div>
+
+                        <h4>Admin</h4>
+
+                        <small>Librarian</small>
+
+                    </div>
+
+                </div>
+
+                <button id="logoutBtn" class="logout-btn">
+
+                    <i class="ri-logout-box-r-line"></i>
+
+                    <span>Logout</span>
+
+                </button>
+
             </div>
-          </div>
 
-          <div class="dashboard-card">
-            <div class="card-icon orange">
-              <i class="ri-bookmark-fill"></i>
-            </div>
+        </aside>
 
-            <div>
-              <h2 id="issuedBooks">159</h2>
+        <!-- ================= SIDEBAR END ================= -->
 
-              <span>Issued</span>
-            </div>
-          </div>
+        <!-- ================= MAIN CONTENT ================= -->
 
-          <div class="dashboard-card">
-            <div class="card-icon red">
-              <i class="ri-alarm-warning-fill"></i>
-            </div>
+        <section class="main-content">
 
-            <div>
-              <h2 id="overdueBooks">18</h2>
+            <!-- Navbar will be here -->
+            <!-- ================= NAVBAR START ================= -->
 
-              <span>Overdue</span>
-            </div>
-          </div>
+            <header class="topbar">
 
-          <div class="dashboard-card">
-            <div class="card-icon purple">
-              <i class="ri-group-fill"></i>
-            </div>
+                <div class="topbar-left">
 
-            <div>
-              <h2 id="members">562</h2>
+                    <button id="menuToggle">
 
-              <span>Members</span>
-            </div>
-          </div>
+                        <i class="ri-menu-fold-line"></i>
 
-          <div class="dashboard-card">
-            <div class="card-icon cyan">
-              <i class="ri-money-dollar-circle-fill"></i>
-            </div>
+                    </button>
 
-            <div>
-              <h2 id="fineCollection">$2,350</h2>
+                    <div class="page-title">
 
-              <span>Fine Collection</span>
-            </div>
-          </div>
-        </section>
+                        <h2 id="pageTitle">Dashboard</h2>
 
-        <!-- ================= Quick Actions ================= -->
+                        <p id="pageDescription">
+                            Welcome back, Admin 👋
+                        </p>
 
-        <section class="quick-actions">
-          <button id="addBook">
-            <i class="ri-add-circle-fill"></i>
+                    </div>
 
-            Add Book
-          </button>
+                </div>
 
-          <button id="addMember">
-            <i class="ri-user-add-fill"></i>
+                <div class="topbar-center">
 
-            Add Member
-          </button>
+                    <div class="global-search">
 
-          <button id="issueBook">
-            <i class="ri-bookmark-fill"></i>
+                        <i class="ri-search-line"></i>
 
-            Issue Book
-          </button>
+                        <input type="text" id="globalSearch" placeholder="Search books, members, reports...">
 
-          <button id="returnBook">
-            <i class="ri-book-read-fill"></i>
+                    </div>
 
-            Return Book
-          </button>
-        </section>
-      </main>
-    </div>
-            <!-- ================= Analytics ================= -->
+                </div>
 
-        <section class="analytics-grid">
+                <div class="topbar-right">
 
-            <!-- Chart -->
+                    <button class="icon-btn" id="themeToggle">
 
-            <div class="panel chart-panel">
+                        <i class="ri-moon-line"></i>
 
-                <div class="panel-header">
+                    </button>
 
-                    <h2>Monthly Book Issues</h2>
+                    <button class="icon-btn notification-btn">
 
-                    <select id="chartFilter">
+                        <i class="ri-notification-3-line"></i>
 
-                        <option>This Year</option>
-                        <option>Last Year</option>
+                        <span class="notification-badge">5</span>
+
+                    </button>
+
+                    <button class="icon-btn">
+
+                        <i class="ri-mail-line"></i>
+
+                        <span class="notification-badge">2</span>
+
+                    </button>
+
+                    <div class="current-date">
+
+                        <i class="ri-calendar-line"></i>
+
+                        <span id="currentDate">
+
+                        </span>
+
+                    </div>
+
+                    <div class="profile-menu">
+
+                        <img src="https://i.pravatar.cc/150?img=13" alt="Profile">
+
+                        <div>
+
+                            <h4>Manav</h4>
+
+                            <small>Administrator</small>
+
+                        </div>
+
+                        <i class="ri-arrow-down-s-line"></i>
+
+                    </div>
+
+                </div>
+
+            </header>
+
+            <!-- ================= NAVBAR END ================= -->
+
+            <!-- Dashboard will be here -->
+            <!-- ================= DASHBOARD START ================= -->
+
+            <section id="dashboardPage" class="page active-page">
+
+                <!-- Welcome Banner -->
+
+                <section class="welcome-banner">
+
+                    <div class="welcome-content">
+
+                        <h1>Welcome Back 👋</h1>
+
+                        <p>
+                            Manage books, members and library activities
+                            from one powerful dashboard.
+                        </p>
+
+                    </div>
+
+                    <button id="quickAddBook">
+
+                        <i class="ri-add-line"></i>
+
+                        <p>Add New Book</p>
+
+                    </button>
+
+                </section>
+
+                <!-- Statistics -->
+
+                <section class="stats-grid">
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-book-2-line"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2 id="totalBooks">0</h2>
+
+                            <p>Total Books</p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-bookmark-line"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2 id="issuedBooks">0</h2>
+
+                            <p>Issued Books</p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-team-line"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2 id="totalMembers">0</h2>
+
+                            <p>Total Members</p>
+
+                        </div>
+
+                    </article>
+
+                    <article class="stat-card">
+
+                        <div class="stat-icon">
+                            <i class="ri-money-dollar-circle-line"></i>
+                        </div>
+
+                        <div class="stat-info">
+
+                            <h2 id="totalFine">$0</h2>
+
+                            <p>Total Fine</p>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <!-- Dashboard Content -->
+
+                <section class="dashboard-content">
+
+                    <div class="left-panel">
+
+                        <!-- Chart Placeholder -->
+
+                        <section class="card" id="dashCard">
+
+                            <div class="card-header">
+
+                                <h3>Monthly Overview</h3>
+
+                                <button class="view-btn">
+                                    View Report
+                                </button>
+
+                            </div>
+
+                            <div class="chart-placeholder">
+
+                                📈 Chart will be added later
+
+                            </div>
+
+                        </section>
+
+                        <!-- Recent Activity -->
+
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <h3>Recent Activities</h3>
+
+                            </div>
+
+                            <div id="activityList">
+
+                                <p>No recent activities.</p>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                    <div class="right-panel">
+
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <h3>Quick Actions</h3>
+
+                            </div>
+
+                            <div class="quick-actions">
+
+                                <button id="dashboardAddBook">
+
+                                    <i class="ri-book-2-line"></i>
+
+                                    Add Book
+
+                                </button>
+
+                                <button id="dashboardAddMember">
+
+                                    <i class="ri-user-add-line"></i>
+
+                                    Add Member
+
+                                </button>
+
+                                <button id="dashboardIssueBook">
+
+                                    <i class="ri-bookmark-line"></i>
+
+                                    Issue Book
+
+                                </button>
+
+                                <button id="dashboardReports">
+
+                                    <i class="ri-bar-chart-box-line"></i>
+
+                                    Reports
+
+                                </button>
+
+                            </div>
+
+                        </section>
+
+                        <section class="card">
+
+                            <div class="card-header">
+
+                                <h3>Recent Books</h3>
+
+                            </div>
+
+                            <div id="recentBooks">
+
+                                <p>No books available.</p>
+
+                            </div>
+
+                        </section>
+
+                    </div>
+
+                </section>
+
+            </section>
+
+            <!-- ================= DASHBOARD END ================= -->
+
+            <!-- Books will be here -->
+            <!-- ================= BOOKS PAGE START ================= -->
+
+            <section id="booksPage" class="page hidden">
+
+                <!-- Page Header -->
+                <div class="page-header">
+
+                    <div class="header-left">
+
+                        <h1>Books Management</h1>
+
+                        <p>
+                            Manage your library collection efficiently.
+                        </p>
+
+                    </div>
+
+                    <div class="header-right">
+
+                        <button id="importBooksBtn" class="secondary-btn">
+                            <i class="ri-upload-line"></i>
+                            Import
+                        </button>
+
+                        <button id="exportBooksBtn" class="secondary-btn">
+                            <i class="ri-download-line"></i>
+                            Export
+                        </button>
+
+                        <button id="addBookBtn" class="primary-btn">
+                            <i class="ri-add-line"></i>
+                            Add Book
+                        </button>
+
+                    </div>
+
+                </div>
+
+                <!-- Toolbar -->
+
+                <div class="books-toolbar">
+
+                    <div class="search-box">
+
+                        <i class="ri-search-line"></i>
+
+                        <input type="text" id="bookSearch" placeholder="Search by title, author or ISBN...">
+
+                    </div>
+
+                    <select id="categoryFilter">
+
+                        <option value="">All Categories</option>
+
+                        <option>Programming</option>
+
+                        <option>Science</option>
+
+                        <option>History</option>
+
+                        <option>Business</option>
+
+                    </select>
+
+                    <select id="statusFilter">
+
+                        <option value="">All Status</option>
+
+                        <option>Available</option>
+
+                        <option>Issued</option>
+
+                        <option>Reserved</option>
+
+                        <option>Lost</option>
+
+                    </select>
+
+                    <select id="sortBooks">
+
+                        <option>Newest</option>
+
+                        <option>Oldest</option>
+
+                        <option>A-Z</option>
+
+                        <option>Z-A</option>
 
                     </select>
 
                 </div>
 
-                <div class="chart-placeholder">
+                <!-- Statistics -->
 
-                    <i class="ri-bar-chart-box-fill"></i>
+                <section class="books-stats">
 
-                    <h3>Chart.js Graph</h3>
+                    <article class="mini-card">
+
+                        <h3 id="bookCount">0</h3>
+
+                        <p>Total Books</p>
+
+                    </article>
+
+                    <article class="mini-card">
+
+                        <h3 id="availableCount">1</h3>
+
+                        <p>Available</p>
+
+                    </article>
+
+                    <article class="mini-card">
+
+                        <h3 id="issuedCount">0</h3>
+
+                        <p>Issued</p>
+
+                    </article>
+
+                    <article class="mini-card">
+
+                        <h3 id="reservedCount">0</h3>
+
+                        <p>Reserved</p>
+
+                    </article>
+
+                </section>
+
+                <!-- Books Grid Header -->
+
+                <div class="books-table">
+
+                    <div class="books-head">
+
+                        <span>Cover</span>
+
+                        <span>Title</span>
+
+                        <span>Author</span>
+
+                        <span>Category</span>
+
+                        <span>ISBN</span>
+
+                        <span>Status</span>
+
+                        <span>Actions</span>
+
+                    </div>
+
+                    <!-- JavaScript will render rows here -->
+                    <div id="booksTableBody">
+
+                        <!-- Empty State -->
+
+                        <div class="empty-state">
+
+                            <i class="ri-book-2-line"></i>
+
+                            <h2>No Books Found</h2>
+
+                            <p>
+
+                                Click <strong>"Add Book"</strong>
+                                to register your first book.
+
+                            </p>
+
+                        </div>
+                        <div class="book-row">
+
+                            <div class="books-photo">
+
+                                <img src="https://i.pravatar.cc/150?img=13" alt="">
+
+                            </div>
+
+                            <span>Atomic Habit</span>
+
+                            <span>Robert Vijay</span>
+
+                            <span>Science</span>
+
+                            <span>124568458</span>
+
+                            <span>Issued</span>
+
+                            <div class="action-buttons">
+
+                                <button class="view-btn bookpage-view-btn">
+
+                                    <i class="ri-eye-line"></i>
+
+                                </button>
+
+                                <button class="edit-btn bookpage-edit-btn">
+
+                                    <i class="ri-pencil-line "></i>
+
+                                </button>
+
+                                <button class="delete-btn bookpage-delete-btn">
+
+                                    <i class="ri-delete-bin-line"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+                        <div class="book-row">
+
+                            <div class="books-photo">
+
+                                <img src="https://i.pravatar.cc/150?img=13" alt="">
+
+                            </div>
+
+                            <span>Atomic Habit</span>
+
+                            <span>Robert Vijay</span>
+
+                            <span>Science</span>
+
+                            <span>124568458</span>
+
+                            <span>Issued</span>
+
+                            <div class="action-buttons">
+
+                                <button class="view-btn bookpage-view-btn">
+
+                                    <i class="ri-eye-line"></i>
+
+                                </button>
+
+                                <button class="edit-btn bookpage-edit-btn">
+
+                                    <i class="ri-pencil-line"></i>
+
+                                </button>
+
+                                <button class="delete-btn bookpage-delete-btn">
+
+                                    <i class="ri-delete-bin-line"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <!-- Pagination -->
+
+                <div class="pagination">
+
+                    <button id="prevPage">
+
+                        <i class="ri-arrow-left-s-line"></i>
+
+                    </button>
+
+                    <span id="pageNumber">
+
+                        Page 1
+
+                    </span>
+
+                    <button id="nextPage">
+
+                        <i class="ri-arrow-right-s-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ================= BOOKS PAGE END ================= -->
+
+            <!-- ================= BOOK DRAWER START ================= -->
+
+            <aside id="bookDrawer" class="drawer hidden">
+
+                <div class="drawer-header">
+
+                    <h2 id="drawerTitle">Add New Book</h2>
+
+                    <button id="closeDrawer">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+                <form id="bookForm" class="remover">
+
+                    <!-- Book Cover -->
+
+                    <div class="form-group">
+
+                        <label>Book Cover</label>
+
+                        <input type="url" id="bookCover" placeholder="https://example.com/book.jpg">
+
+                    </div>
+
+                    <!-- Title -->
+
+                    <div class="form-group">
+
+                        <label>Book Title</label>
+
+                        <input type="text" id="bookTitle" placeholder="Enter book title">
+
+                    </div>
+
+                    <!-- Subtitle -->
+
+                    <div class="form-group">
+
+                        <label>Subtitle</label>
+
+                        <input type="text" id="bookSubtitle" placeholder="Optional">
+
+                    </div>
+
+                    <!-- Author -->
+
+                    <div class="form-group">
+
+                        <label>Author</label>
+
+                        <input type="text" id="bookAuthor" placeholder="Author name">
+
+                    </div>
+
+                    <!-- Publisher -->
+
+                    <div class="form-group">
+
+                        <label>Publisher</label>
+
+                        <input type="text" id="bookPublisher" placeholder="Publisher">
+
+                    </div>
+
+                    <!-- ISBN -->
+
+                    <div class="form-group">
+
+                        <label>ISBN</label>
+
+                        <input type="text" id="bookISBN" placeholder="ISBN Number">
+
+                    </div>
+
+                    <!-- Category -->
+
+                    <div class="form-group">
+
+                        <label>Category</label>
+
+                        <select id="bookCategory">
+
+                            <option>Programming</option>
+
+                            <option>Science</option>
+
+                            <option>History</option>
+
+                            <option>Business</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Shelf -->
+
+                    <div class="form-group">
+
+                        <label>Shelf</label>
+
+                        <input type="text" id="bookShelf" placeholder="A-12">
+
+                    </div>
+
+                    <!-- Price -->
+
+                    <div class="form-group">
+
+                        <label>Price</label>
+
+                        <input type="number" id="bookPrice" placeholder="0">
+
+                    </div>
+
+                    <!-- Copies -->
+
+                    <div class="form-group">
+
+                        <label>Copies</label>
+
+                        <input type="number" id="bookCopies" placeholder="0">
+
+                    </div>
+
+                    <!-- Description -->
+
+                    <div class="form-group">
+
+                        <label>Description</label>
+
+                        <textarea id="bookDescription" rows="5" placeholder="Book Description"></textarea>
+
+                    </div>
+
+                    <div class="drawer-buttons">
+
+                        <button type="button" id="cancelBook" class="secondary-btn addBookCancel">
+
+                            Cancel
+
+                        </button>
+
+                        <button type="submit" id="saveBook" class="primary-btn">
+
+                            Save Book
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </aside>
+
+            <!-- ================= BOOK DRAWER END ================= -->
+            <!-- ================= BOOK DETAILS DRAWER ================= -->
+
+            <aside id="bookDetailsDrawer" class="drawer hidden">
+
+                <div class="drawer-header">
+
+                    <h2>Book Details</h2>
+
+                    <button id="closeDetailsDrawer">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="book-details">
+
+                    <div class="book-cover-preview">
+
+                        <img id="detailBookCover" src="https://placehold.co/250x350" alt="Book Cover">
+
+                    </div>
+
+                    <div class="details-grid">
+
+                        <div class="detail-item">
+
+                            <label>Title</label>
+
+                            <span id="detailTitle">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Subtitle</label>
+
+                            <span id="detailSubtitle">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Author</label>
+
+                            <span id="detailAuthor">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Publisher</label>
+
+                            <span id="detailPublisher">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>ISBN</label>
+
+                            <span id="detailISBN">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Category</label>
+
+                            <span id="detailCategory">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Shelf</label>
+
+                            <span id="detailShelf">-</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Copies</label>
+
+                            <span id="detailCopies">0</span>
+
+                        </div>
+
+                        <div class="detail-item">
+
+                            <label>Status</label>
+
+                            <span id="detailStatus">Available</span>
+
+                        </div>
+
+                        <div class="detail-item full-width">
+
+                            <label>Description</label>
+
+                            <p id="detailDescription">
+                                No description available.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+            <!-- ================= END BOOK DETAILS ================= -->
+            <!-- ================= DELETE CONFIRMATION MODAL ================= -->
+
+            <div id="deleteModal" class="modal hidden">
+
+                <div class="modal-content">
+
+                    <div class="modal-icon danger">
+
+                        <i class="ri-delete-bin-6-line"></i>
+
+                    </div>
+
+                    <h2>Delete Book</h2>
 
                     <p>
-                        Monthly issue statistics will appear here.
+
+                        Are you sure you want to delete this book?
+
+                        This action cannot be undone.
+
+                    </p>
+
+                    <div class="modal-buttons">
+
+                        <button id="cancelDelete" class="secondary-btn">
+
+                            Cancel
+
+                        </button>
+
+                        <button id="confirmDelete" class="danger-btn">
+
+                            Delete
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ================= END DELETE MODAL ================= -->
+            <!-- ================= TOAST ================= -->
+
+            <div id="toast" class="toast">
+
+                <i id="toastIcon" class="ri-checkbox-circle-fill"></i>
+
+                <div class="toast-content">
+
+                    <h4 id="toastTitle">
+
+                        Success
+
+                    </h4>
+
+                    <p id="toastMessage">
+
+                        Book Added Successfully
+
                     </p>
 
                 </div>
 
             </div>
 
+            <!-- ================= END TOAST ================= -->
+            <!-- ================= LOADER ================= -->
 
+            <div id="loader" class="loader hidden">
 
-            <!-- Category -->
+                <div class="spinner"></div>
 
-            <div class="panel category-panel">
+                <p>Loading...</p>
 
-                <div class="panel-header">
+            </div>
+            <!-- Members will be here -->
 
-                    <h2>Books by Category</h2>
+            <section id="membersPage" class="page hidden">
 
-                </div>
+                <!-- ==========================
+         PAGE HEADER
+    =========================== -->
 
-                <div class="category-list">
+                <div class="page-header">
 
-                    <div class="category-item">
+                    <div class="header-left">
 
-                        <span>Programming</span>
+                        <h1>Members Management</h1>
 
-                        <div class="progress">
-
-                            <div class="fill blue" style="width:90%"></div>
-
-                        </div>
-
-                        <strong>420</strong>
-
-                    </div>
-
-                    <div class="category-item">
-
-                        <span>Science</span>
-
-                        <div class="progress">
-
-                            <div class="fill green" style="width:70%"></div>
-
-                        </div>
-
-                        <strong>310</strong>
+                        <p>
+                            Manage all registered library members.
+                        </p>
 
                     </div>
 
-                    <div class="category-item">
+                    <div class="header-right">
 
-                        <span>History</span>
+                        <button id="importMembersBtn" class="secondary-btn">
+                            <i class="ri-upload-line"></i>
+                            Import
+                        </button>
 
-                        <div class="progress">
+                        <button id="exportMembersBtn" class="secondary-btn">
+                            <i class="ri-download-line"></i>
+                            Export
+                        </button>
 
-                            <div class="fill orange" style="width:45%"></div>
-
-                        </div>
-
-                        <strong>185</strong>
-
-                    </div>
-
-                    <div class="category-item">
-
-                        <span>Novels</span>
-
-                        <div class="progress">
-
-                            <div class="fill red" style="width:80%"></div>
-
-                        </div>
-
-                        <strong>360</strong>
-
-                    </div>
-
-                    <div class="category-item">
-
-                        <span>Biography</span>
-
-                        <div class="progress">
-
-                            <div class="fill purple" style="width:25%"></div>
-
-                        </div>
-
-                        <strong>98</strong>
+                        <button id="addMemberBtn" class="primary-btn">
+                            <i class="ri-user-add-line"></i>
+                            Add Member
+                        </button>
 
                     </div>
 
                 </div>
 
-            </div>
+                <!-- ==========================
+         TOOLBAR
+    =========================== -->
 
-        </section>
-        <!-- ================= Recent Activity ================= -->
+                <div class="members-toolbar">
 
-        <section class="recent-activity">
+                    <div class="search-box">
 
-            <div class="panel">
+                        <i class="ri-search-line"></i>
 
-                <div class="panel-header">
+                        <input type="search" id="memberSearch"
+                            placeholder="Search by name, email, phone or Member ID..." autocomplete="off">
 
-                    <h2>Recent Activities</h2>
+                    </div>
 
-                    <button>View All</button>
+                    <select id="memberStatusFilter">
+
+                        <option value="">All Status</option>
+
+                        <option value="active">Active</option>
+
+                        <option value="inactive">Inactive</option>
+
+                        <option value="suspended">Suspended</option>
+
+                    </select>
+
+                    <select id="membershipFilter">
+
+                        <option value="">All Memberships</option>
+
+                        <option value="student">Student</option>
+
+                        <option value="faculty">Faculty</option>
+
+                        <option value="staff">Staff</option>
+
+                        <option value="guest">Guest</option>
+
+                    </select>
+
+                    <select id="sortMembers">
+
+                        <option value="newest">Newest</option>
+
+                        <option value="oldest">Oldest</option>
+
+                        <option value="az">A-Z</option>
+
+                        <option value="za">Z-A</option>
+
+                    </select>
+
+                </div>
+                <!-- ==========================================
+     MEMBER STATISTICS
+========================================== -->
+
+                <section class="members-stats">
+
+                    <article class="mini-card">
+
+                        <h3 id="totalMembers">0</h3>
+
+                        <p>Total Members</p>
+
+                    </article>
+
+                    <article class="mini-card">
+
+                        <h3 id="activeMembers">0</h3>
+
+                        <p>Active Members</p>
+
+                    </article>
+
+                    <article class="mini-card">
+
+                        <h3 id="inactiveMembers">0</h3>
+
+                        <p>Inactive Members</p>
+
+                    </article>
+
+                    <article class="mini-card">
+
+                        <h3 id="issuedBooksCount">0</h3>
+
+                        <p>Books Issued</p>
+
+                    </article>
+
+                </section>
+
+                <!-- ==========================================
+     MEMBERS TABLE
+========================================== -->
+
+                <div class="members-table">
+
+                    <div class="table-head">
+
+                        <span>Photo</span>
+
+                        <span>Name</span>
+
+                        <span>Member ID</span>
+
+                        <span>Phone</span>
+
+                        <span>Email</span>
+
+                        <span>Membership</span>
+
+                        <span>Status</span>
+
+                        <span>Actions</span>
+
+                    </div>
+
+                    <div id="membersTableBody">
+
+                        <!-- Empty State -->
+
+                        <div class="empty-state">
+
+                            <i class="ri-group-line"></i>
+
+                            <h2>No Members Found</h2>
+
+                            <p>
+
+                                Click <strong>"Add Member"</strong>
+                                to register your first member.
+
+                            </p>
+
+                        </div>
+
+                        <div class="member-row">
+
+                            <div class="member-photo">
+
+                                <img src="" alt="Member">
+
+                            </div>
+
+                            <span>John Smith</span>
+
+                            <span>MEM001</span>
+
+                            <span>9876543210</span>
+
+                            <span>john@email.com</span>
+
+                            <span>Student</span>
+
+                            <span class="status active">
+
+                                Active
+
+                            </span>
+
+                            <div class="action-buttons">
+
+                                <button class="view-btn">
+
+                                    <i class="ri-eye-line"></i>
+
+                                </button>
+
+                                <button class="edit-btn">
+
+                                    <i class="ri-pencil-line"></i>
+
+                                </button>
+
+                                <button class="delete-btn">
+
+                                    <i class="ri-delete-bin-line"></i>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+                    </div>
 
                 </div>
 
-                <ul class="activity-list">
+                <!-- ==========================================
+     PAGINATION
+========================================== -->
 
-                    <li>
+                <div class="pagination">
 
-                        <div class="activity-icon success">
+                    <button type="button" id="prevMemberPage">
 
-                            <i class="ri-book-fill"></i>
+                        <i class="ri-arrow-left-s-line"></i>
+
+                    </button>
+
+                    <span id="memberPageNumber">
+
+                        Page 1 of 1
+
+                    </span>
+
+                    <button type="button" id="nextMemberPage">
+
+                        <i class="ri-arrow-right-s-line"></i>
+
+                    </button>
+
+                </div>
+
+            </section>
+
+            <!-- ==========================================
+                            MEMBER DRAWER
+                ========================================== -->
+
+            <aside id="memberDrawer" class="drawer">
+
+                <div class="drawer-header">
+
+                    <h2 id="memberDrawerTitle">
+                        Add Member
+                    </h2>
+
+                    <button type="button" id="closeMemberDrawer">
+                        <i class="ri-close-line"></i>
+                    </button>
+
+                </div>
+
+                <form id="memberForm">
+
+                    <!-- Profile Photo -->
+
+                    <div class="form-group">
+
+                        <label for="memberPhoto">
+                            Profile Photo URL
+                        </label>
+
+                        <input type="url" id="memberPhoto" placeholder="https://example.com/photo.jpg">
+
+                    </div>
+
+                    <!-- Full Name -->
+
+                    <div class="form-group">
+
+                        <label for="memberName">
+                            Full Name
+                        </label>
+
+                        <input type="text" id="memberName" placeholder="Enter full name">
+
+                    </div>
+
+                    <!-- Member ID -->
+
+                    <div class="form-group">
+
+                        <label for="memberId">
+                            Member ID
+                        </label>
+
+                        <input type="text" id="memberId" placeholder="MEM001">
+
+                    </div>
+
+                    <!-- Email -->
+
+                    <div class="form-group">
+
+                        <label for="memberEmail">
+                            Email Address
+                        </label>
+
+                        <input type="email" id="memberEmail" placeholder="john@example.com">
+
+                    </div>
+
+                    <!-- Phone -->
+
+                    <div class="form-group">
+
+                        <label for="memberPhone">
+                            Phone Number
+                        </label>
+
+                        <input type="tel" id="memberPhone" placeholder="+91 9876543210">
+
+                    </div>
+
+                    <!-- Gender -->
+
+                    <div class="form-group">
+
+                        <label for="memberGender">
+                            Gender
+                        </label>
+
+                        <select id="memberGender">
+
+                            <option value="">Select Gender</option>
+
+                            <option value="male">Male</option>
+
+                            <option value="female">Female</option>
+
+                            <option value="other">Other</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Date of Birth -->
+
+                    <div class="form-group">
+
+                        <label for="memberDOB">
+                            Date of Birth
+                        </label>
+
+                        <input type="date" id="memberDOB">
+
+                    </div>
+
+                    <!-- Membership -->
+
+                    <div class="form-group">
+
+                        <label for="membershipType">
+                            Membership Type
+                        </label>
+
+                        <select id="membershipType">
+
+                            <option value="">Select Membership</option>
+
+                            <option value="student">Student</option>
+
+                            <option value="faculty">Faculty</option>
+
+                            <option value="staff">Staff</option>
+
+                            <option value="guest">Guest</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Address -->
+
+                    <div class="form-group">
+
+                        <label for="memberAddress">
+                            Address
+                        </label>
+
+                        <textarea id="memberAddress" rows="4" placeholder="Enter full address"></textarea>
+
+                    </div>
+
+                    <!-- Joining Date -->
+
+                    <div class="form-group">
+
+                        <label for="joiningDate">
+                            Joining Date
+                        </label>
+
+                        <input type="date" id="joiningDate">
+
+                    </div>
+
+                    <!-- Status -->
+
+                    <div class="form-group">
+
+                        <label for="memberStatus">
+                            Status
+                        </label>
+
+                        <select id="memberStatus">
+
+                            <option value="active">Active</option>
+
+                            <option value="inactive">Inactive</option>
+
+                            <option value="suspended">Suspended</option>
+
+                        </select>
+
+                    </div>
+
+                    <!-- Buttons -->
+
+                    <div class="drawer-buttons">
+
+                        <button type="button" class="secondary-btn" id="cancelMemberBtn">
+
+                            Cancel
+
+                        </button>
+
+                        <button type="submit" class="primary-btn" id="saveMemberBtn">
+
+                            Save Member
+
+                        </button>
+
+                    </div>
+
+                </form>
+
+            </aside>
+
+            <!-- ==========================================
+     MEMBER DETAILS DRAWER
+========================================== -->
+
+            <aside id="memberDetailsDrawer" class="drawer hidden">
+
+                <div class="drawer-header">
+
+                    <h2>Member Details</h2>
+
+                    <button type="button" id="closeMemberDetails">
+
+                        <i class="ri-close-line"></i>
+
+                    </button>
+
+                </div>
+
+                <div class="book-details">
+
+                    <div class="book-cover-preview">
+
+                        <img id="memberDetailsPhoto" src="https://i.pravatar.cc/150?img=13" placeholder="hello">
+
+                    </div>
+
+                    <div class="details-grid">
+
+                        <div class="detail-item">
+
+                            <label>Name</label>
+
+                            <span id="detailMemberName">-</span>
 
                         </div>
 
-                        <div>
+                        <div class="detail-item">
 
-                            <h4>JavaScript Guide Issued</h4>
+                            <label>Member ID</label>
 
-                            <span>Issued to Rahul Sharma</span>
-
-                        </div>
-
-                        <small>2 min ago</small>
-
-                    </li>
-
-                    <li>
-
-                        <div class="activity-icon warning">
-
-                            <i class="ri-user-add-fill"></i>
+                            <span id="detailMemberId">-</span>
 
                         </div>
 
-                        <div>
+                        <div class="detail-item">
 
-                            <h4>New Member Registered</h4>
+                            <label>Email</label>
 
-                            <span>Anjali Verma joined</span>
-
-                        </div>
-
-                        <small>15 min ago</small>
-
-                    </li>
-
-                    <li>
-
-                        <div class="activity-icon blue">
-
-                            <i class="ri-bookmark-fill"></i>
+                            <span id="detailMemberEmail">-</span>
 
                         </div>
 
-                        <div>
+                        <div class="detail-item">
 
-                            <h4>Book Reserved</h4>
+                            <label>Phone</label>
 
-                            <span>Clean Code</span>
-
-                        </div>
-
-                        <small>1 hour ago</small>
-
-                    </li>
-
-                    <li>
-
-                        <div class="activity-icon danger">
-
-                            <i class="ri-error-warning-fill"></i>
+                            <span id="detailMemberPhone">-</span>
 
                         </div>
 
-                        <div>
+                        <div class="detail-item">
 
-                            <h4>Fine Collected</h4>
+                            <label>Membership</label>
 
-                            <span>$25 Received</span>
+                            <span id="detailMembership">-</span>
 
                         </div>
 
-                        <small>Today</small>
+                        <div class="detail-item">
 
-                    </li>
+                            <label>Status</label>
 
-                </ul>
+                            <span id="detailMemberStatus">-</span>
 
-            </div>
+                        </div>
+
+                        <div class="detail-item full-width">
+
+                            <label>Address</label>
+
+                            <p id="detailMemberAddress">-</p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </aside>
 
         </section>
 
+        <!-- ==========================================
+     DELETE MEMBER MODAL
+========================================== -->
 
+        <div id="deleteMemberModal" class="modal hidden">
 
+            <div class="modal-content">
 
+                <div class="modal-icon danger">
 
-        <!-- ================= Latest Transactions ================= -->
+                    <i class="ri-delete-bin-6-line"></i>
 
-        <section class="panel">
+                </div>
 
-            <div class="panel-header">
+                <h2>Delete Member?</h2>
 
-                <h2>Latest Transactions</h2>
+                <p>
 
-                <button id="viewTransactions">
+                    This action cannot be undone.
 
-                    View All
+                </p>
 
-                </button>
+                <div class="modal-buttons">
 
-            </div>
+                    <button type="button" class="secondary-btn" id="cancelDeleteMember">
 
-            <div class="table-wrapper">
+                        Cancel
 
-                <table>
+                    </button>
 
-                    <thead>
+                    <button type="button" class="danger-btn" id="confirmDeleteMember">
 
-                        <tr>
+                        Delete
 
-                            <th>Transaction ID</th>
-                            <th>Book</th>
-                            <th>Member</th>
-                            <th>Issue Date</th>
-                            <th>Return Date</th>
-                            <th>Status</th>
+                    </button>
 
-                        </tr>
-
-                    </thead>
-
-                    <tbody id="transactionTable">
-
-                        <tr>
-
-                            <td>#TX1021</td>
-
-                            <td>Clean Code</td>
-
-                            <td>Rahul Sharma</td>
-
-                            <td>22 Jul 2026</td>
-
-                            <td>30 Jul 2026</td>
-
-                            <td>
-
-                                <span class="status issued">
-
-                                    Issued
-
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>#TX1022</td>
-
-                            <td>Atomic Habits</td>
-
-                            <td>Priya Singh</td>
-
-                            <td>20 Jul 2026</td>
-
-                            <td>28 Jul 2026</td>
-
-                            <td>
-
-                                <span class="status returned">
-
-                                    Returned
-
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-                        <tr>
-
-                            <td>#TX1023</td>
-
-                            <td>Python Crash Course</td>
-
-                            <td>Mohit Patel</td>
-
-                            <td>19 Jul 2026</td>
-
-                            <td>26 Jul 2026</td>
-
-                            <td>
-
-                                <span class="status overdue">
-
-                                    Overdue
-
-                                </span>
-
-                            </td>
-
-                        </tr>
-
-                    </tbody>
-
-                </table>
+                </div>
 
             </div>
 
-        </section>
+        </div>
+
+        <!-- ================= END LOADER ================= -->
 
 
+        <!-- Reports will be here -->
 
+    </div>
 
+    <!-- JS -->
 
-        <!-- ================= Footer ================= -->
+    <script type="module" src="js/storage.js"></script>
+    <script type="module" src="js/utils.js"></script>
+    <script type="module" src="js/router.js"></script>
 
-        <footer>
+    <script type="module" src="./js/dashboard.js"></script>
+    <script type="module" src="js/books.js"></script>
+    <script type="module" src="js/members.js"></script>
+    <script type="module" src="js/issue.js"></script>
+    <script type="module" src="js/reports.js"></script>
 
-            <p>
+    <script type="module" src="js/modal.js"></script>
+    <script type="module" src="js/toast.js"></script>
 
-                © 2026 Library Management System
+    <script type="module" src="js/app.js"></script>
 
-            </p>
+</body>
 
-            <span>
-
-                Version 1.0.0
-
-            </span>
-
-        </footer>
-
-    </main>
-
-</div>
-
-<script src="js/app.js"></script>
-  </body>
 </html>

@@ -1,0 +1,546 @@
+        <section id="membersPage" class="page hidden">
+
+            <!-- ==========================
+         PAGE HEADER
+    =========================== -->
+
+            <div class="page-header">
+
+                <div class="header-left">
+
+                    <h1>Members Management</h1>
+
+                    <p>
+                        Manage all registered library members.
+                    </p>
+
+                </div>
+
+                <div class="header-right">
+
+                    <button id="importMembersBtn" class="secondary-btn">
+                        <i class="ri-upload-line"></i>
+                        Import
+                    </button>
+
+                    <button id="exportMembersBtn" class="secondary-btn">
+                        <i class="ri-download-line"></i>
+                        Export
+                    </button>
+
+                    <button id="addMemberBtn" class="primary-btn">
+                        <i class="ri-user-add-line"></i>
+                        Add Member
+                    </button>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================
+         TOOLBAR
+    =========================== -->
+
+            <div class="members-toolbar">
+
+                <div class="search-box">
+
+                    <i class="ri-search-line"></i>
+
+                    <input type="search" id="memberSearch" placeholder="Search by name, email, phone or Member ID..."
+                        autocomplete="off">
+
+                </div>
+
+                <select id="memberStatusFilter">
+
+                    <option value="">All Status</option>
+
+                    <option value="active">Active</option>
+
+                    <option value="inactive">Inactive</option>
+
+                    <option value="suspended">Suspended</option>
+
+                </select>
+
+                <select id="membershipFilter">
+
+                    <option value="">All Memberships</option>
+
+                    <option value="student">Student</option>
+
+                    <option value="faculty">Faculty</option>
+
+                    <option value="staff">Staff</option>
+
+                    <option value="guest">Guest</option>
+
+                </select>
+
+                <select id="sortMembers">
+
+                    <option value="newest">Newest</option>
+
+                    <option value="oldest">Oldest</option>
+
+                    <option value="az">A-Z</option>
+
+                    <option value="za">Z-A</option>
+
+                </select>
+
+            </div>
+            <!-- ==========================================
+     MEMBER STATISTICS
+========================================== -->
+
+            <section class="members-stats">
+
+                <article class="mini-card">
+
+                    <h3 id="totalMembers">0</h3>
+
+                    <p>Total Members</p>
+
+                </article>
+
+                <article class="mini-card">
+
+                    <h3 id="activeMembers">0</h3>
+
+                    <p>Active Members</p>
+
+                </article>
+
+                <article class="mini-card">
+
+                    <h3 id="inactiveMembers">0</h3>
+
+                    <p>Inactive Members</p>
+
+                </article>
+
+                <article class="mini-card">
+
+                    <h3 id="issuedBooksCount">0</h3>
+
+                    <p>Books Issued</p>
+
+                </article>
+
+            </section>
+
+            <!-- ==========================================
+     MEMBERS TABLE
+========================================== -->
+
+            <div class="members-table">
+
+                <div class="table-head">
+
+                    <span>Photo</span>
+
+                    <span>Name</span>
+
+                    <span>Member ID</span>
+
+                    <span>Phone</span>
+
+                    <span>Email</span>
+
+                    <span>Membership</span>
+
+                    <span>Status</span>
+
+                    <span>Actions</span>
+
+                </div>
+
+                <div id="membersTableBody">
+
+                    <!-- Empty State -->
+
+                    <div class="empty-state">
+
+                        <i class="ri-group-line"></i>
+
+                        <h2>No Members Found</h2>
+
+                        <p>
+
+                            Click <strong>"Add Member"</strong>
+                            to register your first member.
+
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+            <!-- ==========================================
+     PAGINATION
+========================================== -->
+
+            <div class="pagination">
+
+                <button type="button" id="prevMemberPage">
+
+                    <i class="ri-arrow-left-s-line"></i>
+
+                </button>
+
+                <span id="memberPageNumber">
+
+                    Page 1 of 1
+
+                </span>
+
+                <button type="button" id="nextMemberPage">
+
+                    <i class="ri-arrow-right-s-line"></i>
+
+                </button>
+
+            </div>
+
+        </section>
+
+        <!-- ==========================================
+     MEMBER DRAWER
+========================================== -->
+
+        <aside id="memberDrawer" class="drawer">
+
+            <div class="drawer-header">
+
+                <h2 id="memberDrawerTitle">
+                    Add Member
+                </h2>
+
+                <button type="button" id="closeMemberDrawer">
+                    <i class="ri-close-line"></i>
+                </button>
+
+            </div>
+
+            <form id="memberForm">
+
+                <!-- Profile Photo -->
+
+                <div class="form-group">
+
+                    <label for="memberPhoto">
+                        Profile Photo URL
+                    </label>
+
+                    <input type="url" id="memberPhoto" placeholder="https://example.com/photo.jpg">
+
+                </div>
+
+                <!-- Full Name -->
+
+                <div class="form-group">
+
+                    <label for="memberName">
+                        Full Name
+                    </label>
+
+                    <input type="text" id="memberName" placeholder="Enter full name">
+
+                </div>
+
+                <!-- Member ID -->
+
+                <div class="form-group">
+
+                    <label for="memberId">
+                        Member ID
+                    </label>
+
+                    <input type="text" id="memberId" placeholder="MEM001">
+
+                </div>
+
+                <!-- Email -->
+
+                <div class="form-group">
+
+                    <label for="memberEmail">
+                        Email Address
+                    </label>
+
+                    <input type="email" id="memberEmail" placeholder="john@example.com">
+
+                </div>
+
+                <!-- Phone -->
+
+                <div class="form-group">
+
+                    <label for="memberPhone">
+                        Phone Number
+                    </label>
+
+                    <input type="tel" id="memberPhone" placeholder="+91 9876543210">
+
+                </div>
+
+                <!-- Gender -->
+
+                <div class="form-group">
+
+                    <label for="memberGender">
+                        Gender
+                    </label>
+
+                    <select id="memberGender">
+
+                        <option value="">Select Gender</option>
+
+                        <option value="male">Male</option>
+
+                        <option value="female">Female</option>
+
+                        <option value="other">Other</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Date of Birth -->
+
+                <div class="form-group">
+
+                    <label for="memberDOB">
+                        Date of Birth
+                    </label>
+
+                    <input type="date" id="memberDOB">
+
+                </div>
+
+                <!-- Membership -->
+
+                <div class="form-group">
+
+                    <label for="membershipType">
+                        Membership Type
+                    </label>
+
+                    <select id="membershipType">
+
+                        <option value="">Select Membership</option>
+
+                        <option value="student">Student</option>
+
+                        <option value="faculty">Faculty</option>
+
+                        <option value="staff">Staff</option>
+
+                        <option value="guest">Guest</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Address -->
+
+                <div class="form-group">
+
+                    <label for="memberAddress">
+                        Address
+                    </label>
+
+                    <textarea id="memberAddress" rows="4" placeholder="Enter full address"></textarea>
+
+                </div>
+
+                <!-- Joining Date -->
+
+                <div class="form-group">
+
+                    <label for="joiningDate">
+                        Joining Date
+                    </label>
+
+                    <input type="date" id="joiningDate">
+
+                </div>
+
+                <!-- Status -->
+
+                <div class="form-group">
+
+                    <label for="memberStatus">
+                        Status
+                    </label>
+
+                    <select id="memberStatus">
+
+                        <option value="active">Active</option>
+
+                        <option value="inactive">Inactive</option>
+
+                        <option value="suspended">Suspended</option>
+
+                    </select>
+
+                </div>
+
+                <!-- Buttons -->
+
+                <div class="drawer-buttons">
+
+                    <button type="button" class="secondary-btn" id="cancelMemberBtn">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="submit" class="primary-btn" id="saveMemberBtn">
+
+                        Save Member
+
+                    </button>
+
+                </div>
+
+            </form>
+
+        </aside>
+
+        <!-- ==========================================
+     MEMBER DETAILS DRAWER
+========================================== -->
+
+        <aside id="memberDetailsDrawer" class="drawer hidden">
+
+            <div class="drawer-header">
+
+                <h2>Member Details</h2>
+
+                <button type="button" id="closeMemberDetails">
+
+                    <i class="ri-close-line"></i>
+
+                </button>
+
+            </div>
+
+            <div class="book-details">
+
+                <div class="book-cover-preview">
+
+                    <img id="memberDetailsPhoto" src="https://via.placeholder.com/220x220?text=Member"
+                        alt="Member Photo">
+
+                </div>
+
+                <div class="details-grid">
+
+                    <div class="detail-item">
+
+                        <label>Name</label>
+
+                        <span id="detailMemberName">-</span>
+
+                    </div>
+
+                    <div class="detail-item">
+
+                        <label>Member ID</label>
+
+                        <span id="detailMemberId">-</span>
+
+                    </div>
+
+                    <div class="detail-item">
+
+                        <label>Email</label>
+
+                        <span id="detailMemberEmail">-</span>
+
+                    </div>
+
+                    <div class="detail-item">
+
+                        <label>Phone</label>
+
+                        <span id="detailMemberPhone">-</span>
+
+                    </div>
+
+                    <div class="detail-item">
+
+                        <label>Membership</label>
+
+                        <span id="detailMembership">-</span>
+
+                    </div>
+
+                    <div class="detail-item">
+
+                        <label>Status</label>
+
+                        <span id="detailMemberStatus">-</span>
+
+                    </div>
+
+                    <div class="detail-item full-width">
+
+                        <label>Address</label>
+
+                        <p id="detailMemberAddress">-</p>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </aside>
+
+        <!-- ==========================================
+     DELETE MEMBER MODAL
+========================================== -->
+
+        <div id="deleteMemberModal" class="modal hidden">
+
+            <div class="modal-content">
+
+                <div class="modal-icon danger">
+
+                    <i class="ri-delete-bin-6-line"></i>
+
+                </div>
+
+                <h2>Delete Member?</h2>
+
+                <p>
+
+                    This action cannot be undone.
+
+                </p>
+
+                <div class="modal-buttons">
+
+                    <button type="button" class="secondary-btn" id="cancelDeleteMember">
+
+                        Cancel
+
+                    </button>
+
+                    <button type="button" class="danger-btn" id="confirmDeleteMember">
+
+                        Delete
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>

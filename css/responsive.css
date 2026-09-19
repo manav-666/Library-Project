@@ -1,0 +1,228 @@
+/* ==========================================
+   LARGE LAPTOP
+========================================== */
+
+@media (max-width:1400px){
+
+    .stats-grid{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+    .books-stats{
+        grid-template-columns:repeat(2,1fr);
+    }
+
+}
+
+/* ==========================================
+   TABLET
+========================================== */
+
+@media (max-width:1024px){
+
+    .sidebar{
+
+        width:90px;
+
+    }
+
+    .sidebar .logo div,
+    .sidebar nav span,
+    .sidebar .admin div,
+    .sidebar-search input{
+
+        display:none;
+
+    }
+
+    .sidebar nav a{
+
+        justify-content:center;
+
+    }
+
+    .sidebar-search{
+
+        display:flex;
+
+        justify-content:center;
+
+    }
+
+    .sidebar-search i{
+
+        position:static;
+
+        transform:none;
+
+    }
+
+    .dashboard-content{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .books-toolbar{
+
+        grid-template-columns:1fr 1fr;
+
+    }
+
+}
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width:768px){
+
+    .topbar{
+
+        padding:15px;
+
+    }
+
+    .page{
+
+        padding:20px;
+
+    }
+
+    .welcome-banner{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+        gap:20px;
+
+    }
+
+    .stats-grid{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .books-stats{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .books-toolbar{
+
+        grid-template-columns:1fr;
+
+    }
+
+    .page-header{
+
+        flex-direction:column;
+
+        align-items:flex-start;
+
+    }
+
+    .header-right{
+
+        width:100%;
+
+    }
+
+    .header-right button{
+
+        flex:1;
+
+    }
+
+    .drawer{
+
+        width:100%;
+
+    }
+
+    .toast{
+
+        width:100%;
+
+        right:5%;
+
+        left:5%;
+
+    }
+
+}
+
+/* ==========================================
+   SMALL MOBILE
+========================================== */
+
+@media (max-width:600px){
+
+    .table-head{
+
+        display:none;
+
+    }
+
+    .book-row{
+
+        grid-template-columns:1fr;
+
+        text-align:center;
+
+        gap:15px;
+
+        padding:20px;
+
+    }
+
+    .book-cover{
+
+        margin:auto;
+
+    }
+
+    .action-buttons{
+
+        justify-content:center;
+
+    }
+
+}
+
+/* ==========================================
+   EXTRA SMALL
+========================================== */
+
+@media (max-width:480px){
+
+    .page-title h2{
+
+        font-size:22px;
+
+    }
+
+    .header-left h1{
+
+        font-size:24px;
+
+    }
+
+    .welcome-content h1{
+
+        font-size:28px;
+
+    }
+
+    .primary-btn,
+    .secondary-btn,
+    .danger-btn{
+
+        width:100%;
+
+    }
+
+}

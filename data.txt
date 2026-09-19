@@ -1,0 +1,220 @@
+// ================= BOOK DATA (100 Books) =================
+
+const books = [];
+
+const titles = [
+    "The Alchemist",
+    "Clean Code",
+    "Atomic Habits",
+    "Java Complete Reference",
+    "JavaScript Advanced",
+    "Database System Concepts",
+    "Computer Networks",
+    "Operating System",
+    "Data Structures",
+    "Artificial Intelligence",
+    "Machine Learning",
+    "Web Development",
+    "React Fundamentals",
+    "Python Programming",
+    "C++ Programming",
+    "Digital Marketing",
+    "The Psychology of Money",
+    "Rich Dad Poor Dad",
+    "Harry Potter",
+    "The Hobbit"
+];
+
+const authors = [
+    "Paulo Coelho",
+    "Robert C Martin",
+    "James Clear",
+    "Herbert Schildt",
+    "Jon Duckett",
+    "Silberschatz",
+    "Andrew Tanenbaum",
+    "Thomas H Cormen",
+    "Stuart Russell",
+    "Mark Lutz"
+];
+
+const categories = [
+    "Programming",
+    "Fiction",
+    "Technology",
+    "Science",
+    "Business",
+    "Self Development",
+    "Fantasy",
+    "Education"
+];
+
+
+for(let i = 1; i <= 100; i++){
+
+    books.push({
+        id: i + 1000,
+        title: titles[Math.floor(Math.random() * titles.length)],
+        author: authors[Math.floor(Math.random() * authors.length)],
+        category: categories[Math.floor(Math.random() * categories.length)],
+        publishYear: 2000 + Math.floor(Math.random()*26),
+        price: Math.floor(Math.random()*900)+100,
+        quantity: Math.floor(Math.random()*10)+1,
+        available: Math.floor(Math.random()*10)+1,
+        status: Math.random() > 0.2 ? "Available" : "Issued"
+    });
+
+}
+
+
+
+// ================= MEMBER DATA (50 Members) =================
+
+
+const firstNames = [
+    "Rahul","Amit","Priya","Sneha",
+    "Arjun","Neha","Vikram","Riya",
+    "Karan","Anjali","Manav","Ishita",
+    "Aditya","Pooja","Rohit","Simran"
+];
+
+
+const lastNames = [
+    "Sharma",
+    "Patel",
+    "Verma",
+    "Singh",
+    "Mehta",
+    "Joshi",
+    "Gupta",
+    "Rathore",
+    "Kumar",
+    "Deshmukh"
+];
+
+
+const members = [];
+
+
+for(let i = 1; i <= 50; i++){
+
+    let name =
+    firstNames[Math.floor(Math.random()*firstNames.length)]
+    +" "+
+    lastNames[Math.floor(Math.random()*lastNames.length)];
+
+
+    members.push({
+
+        id:i,
+
+        name:name,
+
+        email:
+        name.toLowerCase().replace(" ",".")
+        +"@gmail.com",
+
+        phone:
+        "9"+Math.floor(100000000 + Math.random()*900000000),
+
+        membership:
+        Math.random()>0.5
+        ? "Premium"
+        : "Regular",
+
+        joinDate:
+        `2026-${String(Math.floor(Math.random()*12)+1).padStart(2,"0")}-${String(Math.floor(Math.random()*28)+1).padStart(2,"0")}`,
+
+        status:
+        Math.random()>0.15
+        ? "Active"
+        : "Inactive"
+
+    });
+
+}
+
+
+
+// ================= TRANSACTION DATA =================
+
+
+const transactions=[];
+
+
+for(let i=1;i<=80;i++){
+
+    let issue =
+    new Date(
+        2026,
+        Math.floor(Math.random()*7),
+        Math.floor(Math.random()*25)+1
+    );
+
+
+    let due =
+    new Date(issue);
+
+    due.setDate(issue.getDate()+14);
+
+
+    transactions.push({
+
+        transactionId:5000+i,
+
+        bookId:
+        Math.floor(Math.random()*100)+1001,
+
+        memberId:
+        Math.floor(Math.random()*50)+1,
+
+        issueDate:
+        issue.toISOString().split("T")[0],
+
+        dueDate:
+        due.toISOString().split("T")[0],
+
+        returnDate:
+        Math.random()>0.5
+        ? new Date().toISOString().split("T")[0]
+        : null,
+
+        fine:
+        Math.floor(Math.random()*200),
+
+        status:
+        Math.random()>0.5
+        ?"Returned"
+        :"Issued"
+
+    });
+
+}
+
+
+
+// Export for usage
+
+console.log("Books:",books);
+console.log("Members:",members);
+console.log("Transactions:",transactions);
+
+
+// Local Storage
+
+localStorage.setItem(
+    "books",
+    JSON.stringify(books)
+);
+
+
+localStorage.setItem(
+    "members",
+    JSON.stringify(members)
+);
+
+
+localStorage.setItem(
+    "transactions",
+    JSON.stringify(transactions)
+);
